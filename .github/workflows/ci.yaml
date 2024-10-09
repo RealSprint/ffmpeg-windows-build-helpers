@@ -1,0 +1,32 @@
+name: Build
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  build:
+    runs-on: rs
+    continue-on-error: false
+    strategy:
+      fail-fast: true
+      matrix:
+        ffmpeg-version: ["6.1"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Build
+        run: |
+          cd docker
+          ./do-docker-build.sh
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ matrix.ffmpeg-version }}
+          draft: false
+          files: |
+            docker/output_*/ffmpeg-N-*.7z

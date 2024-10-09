@@ -23,13 +23,6 @@ if [ $? -eq 0 ]; then
     if [ $? -eq 0 ]; then
         echo [`date +'%Y%m%dT%H%M%S'`] Build successful
         echo [`date +'%Y%m%dT%H%M%S'`] Extracting build artefacts...
-        docker cp ffmpegbuilder:/output/static/ $OUTPUTDIR
-
-        if [ $? -eq 0 ]; then
-            echo [`date +'%Y%m%dT%H%M%S'`] Static extraction successful. Started: $STARTTIME
-        else
-            echo [`date +'%Y%m%dT%H%M%S'`] Static extraction failed. Started: $STARTTIME
-        fi
 
         docker cp ffmpegbuilder:/output/shared/ $OUTPUTDIR
 
@@ -38,7 +31,7 @@ if [ $? -eq 0 ]; then
         else
             echo [`date +'%Y%m%dT%H%M%S'`] Shared extraction failed. Started: $STARTTIME
         fi
-        
+
     else
         echo [`date +'%Y%m%dT%H%M%S'`] Build failed. Started: $STARTTIME
     fi
