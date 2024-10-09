@@ -1,6 +1,6 @@
 #!/bin/bash
 STARTTIME=`date +'%Y%m%dT%H%M%S'`
-OUTPUTDIR=./output_$STARTTIME
+OUTPUTDIR=./output
 
 if [ -d "../git" ]; then
   echo [`date +'%Y%m%dT%H%M%S'`] Updating local git repository.
