@@ -12,7 +12,6 @@ jobs:
       fail-fast: true
       matrix:
         ffmpeg-version: ["6.1"]
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
