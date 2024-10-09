@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: rs
+    runs-on: ubuntu-latest
     continue-on-error: false
     strategy:
       fail-fast: true
