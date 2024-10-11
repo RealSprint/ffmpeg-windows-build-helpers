@@ -20,7 +20,7 @@ jobs:
         run: |
           cd docker
           ./do-docker-build.sh
-          ls -lah output
+          ls -lah output/shared
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v1
@@ -28,4 +28,4 @@ jobs:
           tag_name: ${{ matrix.ffmpeg-version }}
           draft: false
           files: |
-            docker/output/*
+            docker/output/shared/*
