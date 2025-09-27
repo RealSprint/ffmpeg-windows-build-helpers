@@ -1742,7 +1742,7 @@ build_fribidi() {
 
 build_libsrt() {
   # do_git_checkout https://github.com/Haivision/srt.git # might be able to use these days...?
-  download_and_unpack_file https://github.com/Haivision/srt/archive/v1.4.1.tar.gz srt-1.4.1
+  download_and_unpack_file https://github.com/Haivision/srt/archive/v1.5.4.tar.gz srt-1.4.1
   cd srt-1.4.1
     if [[ $compiler_flavors != "native" ]]; then
       apply_patch file://$patch_dir/srt.app.patch -p1
