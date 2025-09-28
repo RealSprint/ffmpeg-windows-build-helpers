@@ -1355,7 +1355,7 @@ build_libspeex() {
 }
 
 build_libtheora() {
-  do_git_checkout https://github.com/xiph/theora.git
+  do_git_checkout https://github.com/xiph/theora.git theora_git 7180717276af1ebc7da15c83162d6c5d6203aabf
   cd theora_git
     generic_configure "--disable-doc --disable-spec --disable-oggtest --disable-vorbistest --disable-examples --disable-asm" # disable asm: avoid [theora @ 0x1043144a0]error in unpack_block_qpis in 64 bit... [OK OS X 64 bit tho...]
     do_make_and_make_install
