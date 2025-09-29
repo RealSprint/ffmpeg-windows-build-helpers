@@ -2703,7 +2703,7 @@ build_ffmpeg_dependencies() {
   build_libilbc # Uses dlfcn.
   build_libmodplug # Uses dlfcn.
   build_libgme
-  build_libbluray # Needs libxml >= 2.6, freetype, fontconfig. Uses dlfcn.
+  # build_libbluray # Needs libxml >= 2.6, freetype, fontconfig. Uses dlfcn.
   build_libbs2b # Needs libsndfile. Uses dlfcn.
   build_libsoxr
   build_libflite
